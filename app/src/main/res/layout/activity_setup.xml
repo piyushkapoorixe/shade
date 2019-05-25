@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login"
+    tools:context=".SetupActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/setup_profile_image"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/profile"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/setup_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/inputs"
+        android:drawableStart="@drawable/username"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="username"
+        android:inputType="textMultiLine"
+        android:padding="15dp"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/setup_full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/setup_username"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/inputs"
+        android:drawableStart="@drawable/name"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Full Name"
+        android:inputType="textMultiLine"
+        android:padding="15dp"
+        android:textSize="20sp" />
+    <LinearLayout
+        android:id="@+id/temp_setup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/setup_full_name"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/setup_country_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginRight="10dp"
+            android:background="@drawable/inputs"
+            android:drawableStart="@drawable/country"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Country"
+            android:inputType="textMultiLine"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/setup_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginRight="10dp"
+            android:background="@drawable/inputs"
+            android:drawableStart="@drawable/username"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Date Of Birth"
+            android:inputType="textMultiLine"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/setup_temp_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/temp_setup"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/setup_relationship_status"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginRight="10dp"
+            android:background="@drawable/inputs"
+            android:drawableStart="@drawable/name"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Relationship"
+            android:inputType="textMultiLine"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/setup_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginRight="10dp"
+            android:background="@drawable/inputs"
+            android:drawableStart="@drawable/country"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Gender"
+            android:inputType="textMultiLine"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/setup_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/setup_temp_2"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/inputs"
+        android:drawableStart="@drawable/username"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Enter Status"
+        android:inputType="textMultiLine"
+        android:padding="15dp"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/setup_information_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="600dp"
+        android:background="@drawable/button"
+        android:text="Save"
+        android:textColor="@android:color/background_light" />
+
+    <CheckBox
+        android:id="@+id/setup_consent_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consent"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="20dp"/>
+
+
+</RelativeLayout>
