@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Title -->
+    <title><%= username %> &middot; Home | Shade</title>
+
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="/public/css/vendor/bootstrap.min.css" />
+
+    <!-- Home stylesheet -->
+    <link rel="stylesheet" href="/public/css/home.css" />
+  </head>
+  <body>
+    <!-- Username heading -->
+    <h1 class="display-4 text-center" id="username"><%= username %></h1>
+
+    <!-- Main navigation bar -->
+    <nav id="main-nav">
+      <!-- Navigation links -->
+      <a href="#" class="nav-item active" onclick="return false;">
+        <span>Home</span>
+      </a>
+      <a href="/<%= username %>" class="nav-item">
+        <span>Profile</span>
+      </a>
+      <a href="/logout" class="nav-item">
+        <span>Log Out</span>
+      </a>
+    </nav>
+
+    <!-- Home navigation bar -->
+    <nav id="home-nav">
+      <!-- Navigation links -->
+      <a href="#" class="nav-item active" id="activity-tab">
+        <span>Activity</span>
+      </a>
+      <a href="#" class="nav-item" id="search-tab">
+        <span>Search</span>
+      </a>
+      <a href="#" class="nav-item" id="notifs-tab">
+        <span>Notifications</span>
+      </a>
+    </nav>
+
+    <!-- Main container -->
+    <div id="main-container">
+      <!-- Activity container -->
+      <div id="activity-container">
+        <!-- Activity list group -->
+        <ul class="list-group" id="activity-list"></ul>
+
+        <!-- Activity end text -->
+        <p class="text-center">
+          <a href="#" id="activity-end-text">Show Posts</a>
+        </p>
+      </div>
+
+      <!-- Search container -->
+      <div id="search-container">
+        <!-- Search input group -->
+        <div class="input-group">
+          <!-- Search input box -->
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            id="search-input"
+            placeholder="Enter username"
+          />
+
+          <!-- Search button -->
+          <div class="input-group-append">
+            <button
+              class="btn btn-primary btn-sm"
+              type="button"
+              id="search-button"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+
+        <!-- Search result -->
+        <div class="card" id="search-result"></div>
+      </div>
+
+      <!-- Notifs container -->
+      <div id="notifs-container"></div>
+    </div>
+
+    <!-- jQuery script -->
+    <script src="/public/js/vendor/jquery-3.3.1.min.js"></script>
+
+    <!-- Home script -->
+    <script src="/public/js/home/home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Title -->
+    <title><%= username %> &middot; Profile | Shade</title>
+
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="/public/css/vendor/bootstrap.min.css" />
+
+    <!-- Profile stylesheet -->
+    <link rel="stylesheet" href="/public/css/profile.css" />
+  </head>
+  <body>
+    <!-- Username change modal -->
+    <div class="modal fade" id="username-change-modal" tabindex="-1">
+      <!-- Modal dialog -->
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <!-- Modal header -->
+          <div class="modal-header">
+            <!-- Modal title -->
+            <h5 class="modal-title">Change Username</h5>
+
+            <!-- Close button -->
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <!-- Username change form -->
+            <form
+              action="/<%= username %>/change/username"
+              method="POST"
+              id="username-change-form"
+            >
+              <!-- New username form group -->
+              <div class="form-group">
+                <!-- New username label group -->
+                <div id="label-group">
+                  <!-- New username label -->
+                  <label for="new-username">New Username</label>
+
+                  <!-- New username small text -->
+                  <small id="new-username-small-text" class="form-text"></small>
+                </div>
+                <!-- New username input -->
+                <input
+                  type="text"
+                  name="new_username"
+                  class="form-control form-control-sm"
+                  id="new-username"
+                  placeholder="Enter new username"
+                />
+              </div>
+
+              <!-- Password form group -->
+              <div class="form-group">
+                <!-- Password label group -->
+                <div id="label-group">
+                  <!-- Password label -->
+                  <label for="password">Password</label>
+
+                  <!-- Password small text -->
+                  <small id="password-small-text" class="form-text"></small>
+                </div>
+
+                <!-- Password input -->
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  class="form-control form-control-sm"
+                  placeholder="Enter password"
+                />
+              </div>
+
+              <!-- 'Save'  submit button -->
+              <button type="submit" class="btn btn-sm btn-primary">
+                Save
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Password change modal -->
+    <div class="modal fade" id="password-change-modal" tabindex="-1">
+      <!-- Modal dialog -->
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <!-- Modal header -->
+          <div class="modal-header">
+            <!-- Modal title -->
+            <h5 class="modal-title">Change Password</h5>
+
+            <!-- Close button -->
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <!-- Password change form -->
+            <form
+              action="/<%= username %>/change/password"
+              method="POST"
+              id="password-change-form"
+            >
+              <!-- Old password form group -->
+              <div class="form-group">
+                <!-- Old password label group -->
+                <div id="label-group">
+                  <!-- Old password label -->
+                  <label for="old-password">Old Password</label>
+
+                  <!-- Old password small text -->
+                  <small id="old-password-small-text" class="form-text"></small>
+                </div>
+
+                <!-- Old password input -->
+                <input
+                  type="password"
+                  name="old_password"
+                  id="old-password"
+                  class="form-control form-control-sm"
+                  placeholder="Enter old password"
+                />
+              </div>
+
+              <!-- New password form group -->
+              <div class="form-group">
+                <!-- New password label group -->
+                <div id="label-group">
+                  <!-- New password label -->
+                  <label for="new-password">New Password</label>
+
+                  <!-- New password small text -->
+                  <small id="new-password-small-text" class="form-text"></small>
+                </div>
+
+                <!-- New password input -->
+                <input
+                  type="password"
+                  name="new_password"
+                  class="form-control form-control-sm"
+                  id="new-password"
+                  placeholder="Enter new password"
+                />
+              </div>
+
+              <!-- 'Save' submit button -->
+              <button type="submit" class="btn btn-sm btn-primary">
+                Save
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Consent change modal -->
+    <div class="modal fade" id="consent-change-modal" tabindex="-1">
+      <!-- Modal dialog -->
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <!-- Modal header -->
+          <div class="modal-header">
+            <!-- Modal title -->
+            <h5 class="modal-title">Change Consent</h5>
+
+            <!-- Close button -->
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <!-- Consent change form -->
+            <form
+              action="/<%= username %>/change/consent"
+              method="POST"
+              id="consent-change-form"
+            >
+              <!-- Consent form group -->
+              <div class="form-group">
+                <!-- Consent custom control -->
+                <div class="custom-control custom-checkbox">
+                  <!-- Consent checkbox -->
+                  <input
+                    type="checkbox"
+                    name="consent"
+                    class="custom-control-input"
+                    id="consent"
+                  />
+
+                  <!-- Consent label -->
+                  <label for="consent" class="custom-control-label">
+                    I would like to share my data with Shade.
+                    <small class="text-secondary">
+                      (Check/Uncheck as suitable.)
+                    </small>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Consent password form group -->
+              <div class="form-group">
+                <!-- Consent password label group -->
+                <div id="label-group">
+                  <!-- Consent password label -->
+                  <label for="consent-password">Password</label>
+
+                  <!-- Consent password small text -->
+                  <small
+                    id="consent-password-small-text"
+                    class="form-text"
+                  ></small>
+                </div>
+
+                <!-- Consent password input -->
+                <input
+                  type="password"
+                  name="consent_password"
+                  class="form-control form-control-sm"
+                  id="consent-password"
+                  placeholder="Enter password"
+                />
+              </div>
+
+              <!-- 'Save' submit button -->
+              <button type="submit" class="btn btn-sm btn-primary">
+                Save
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Username heading -->
+    <h1 class="display-4 text-center" id="username"><%= username %></h1>
+
+    <!-- Main navigation bar -->
+    <nav id="main-nav">
+      <!-- Navigation links -->
+      <a href="/" class="nav-item">
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item active" onclick="return false;">
+        <span>Profile</span>
+      </a>
+      <a href="/logout" class="nav-item">
+        <span>Log Out</span>
+      </a>
+    </nav>
+
+    <!-- Profile navigation bar -->
+    <nav id="profile-nav">
+      <!-- Navigation links -->
+      <a href="#" class="nav-item active" id="activity-tab">
+        <span>Activity</span>
+      </a>
+      <a href="#" class="nav-item" id="connections-tab">
+        <span>Connections</span>
+      </a>
+      <a href="#" class="nav-item" id="about-tab">
+        <span>About</span>
+      </a>
+    </nav>
+
+    <!-- Main container -->
+    <div id="main-container">
+      <!-- Activity container -->
+      <div id="activity-container">
+        <!-- Post form -->
+        <form action="/<%= username %>/post" method="POST" id="post-form">
+          <!-- Post textarea -->
+          <div class="form-group">
+            <textarea
+              name="content"
+              id="content"
+              class="form-control"
+              placeholder="Write something..."
+            ></textarea>
+          </div>
+
+          <!-- Post input group -->
+          <div class="input-group">
+            <!-- Post audience select -->
+            <select
+              name="audience"
+              id="audience"
+              class="custom-select custom-select-sm"
+            >
+              <option value="0" selected>Select an audience...</option>
+              <option value="friends">Friends</option>
+              <option value="family">Family</option>
+              <option value="acquaintances">Acquaintances</option>
+              <option value="public">Public</option>
+            </select>
+
+            <!-- Post button -->
+            <div class="input-group-append">
+              <button
+                type="submit"
+                class="btn btn-sm btn-primary"
+                id="post-button"
+              >
+                Post
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Horizontal line -->
+        <hr />
+
+        <!-- Activity list group -->
+        <ul class="list-group" id="activity-list"></ul>
+
+        <!-- Activity end text -->
+        <p class="text-center">
+          <a href="#" id="activity-end-text">Show Posts</a>
+        </p>
+      </div>
+
+      <!-- Connections container -->
+      <div id="connections-container">
+        <!-- Connections nav -->
+        <nav id="connections-nav">
+          <!-- Connection lists tab -->
+          <a href="#" id="friends-tab" class="nav-item active">Friends</a>
+          <a href="#" id="family-tab" class="nav-item">Family</a>
+          <a href="#" id="acquaintances-tab" class="nav-item">Acquaintances</a>
+          <a href="#" id="following-tab" class="nav-item">All</a>
+        </nav>
+
+        <!-- Connection lists containers -->
+        <div id="friends-container">
+          <div class="alert alert-primary">
+            When you connect with a user as <strong>Friend</strong>, you share
+            your <strong>Friends</strong>-only posts with them.
+          </div>
+
+          <div id="friends-list" class="list-group"></div>
+        </div>
+        <div id="family-container">
+          <div class="alert alert-primary">
+            When you connect with a user as <strong>Family</strong>, you share
+            your <strong>Family</strong>-only posts with them.
+          </div>
+          <div id="family-list" class="list-group"></div>
+        </div>
+        <div id="acquaintances-container">
+          <div class="alert alert-primary">
+            When you connect with a user as an <strong>Acquaintance</strong>,
+            you share your <strong>Acquaintances</strong>-only posts with them.
+          </div>
+          <div id="acquaintances-list" class="list-group"></div>
+        </div>
+        <div id="following-container">
+          <div class="alert alert-primary">
+            When you connect with a user, you automatically start following them
+            for their <strong>Public</strong> posts.
+          </div>
+          <div id="following-list" class="list-group"></div>
+        </div>
+      </div>
+
+      <!-- About container -->
+      <div id="about-container">
+        <!-- About info list -->
+        <div class="list-group" id="about-list"></div>
+
+        <!-- About small text -->
+        <p class="text-right"><small>Click on a field to change.</small></p>
+      </div>
+    </div>
+
+    <!-- jQuery script -->
+    <script src="/public/js/vendor/jquery-3.3.1.min.js"></script>
+
+    <!-- Popper script -->
+    <script src="/public/js/vendor/popper.min.js"></script>
+
+    <!-- Bootstrap script -->
+    <script src="/public/js/vendor/bootstrap.min.js"></script>
+
+    <!-- Own profile script -->
+    <script src="/public/js/profile/own.js"></script>
+  </body>
+</html>

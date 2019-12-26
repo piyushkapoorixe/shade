@@ -1,0 +1,155 @@
+<% let title, otherTitle, otherType, subText; %> <% if (type === 'register') {
+%> <% title = 'Register'; %> <% otherTitle = 'Log In'; %> <% otherType =
+'login'; %> <% subText = 'Already have an account?'; %> <% } else if (type ===
+'login') { %> <% title = 'Log In'; %> <% otherTitle = 'Register'; %> <%
+otherType = 'register'; %> <% subText = "Don't have an account?"; %> <% } %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Title -->
+    <title>Shade &middot; <%= title %></title>
+
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="/public/css/vendor/bootstrap.min.css" />
+
+    <!-- Form stylesheet -->
+    <link rel="stylesheet" href="/public/css/form.css" />
+  </head>
+
+  <body>
+    <!-- Grid container -->
+    <div id="main-grid-container">
+      <!-- Grid item 1: head-flex-container -->
+      <div id="head-flex-container" class="text-center">
+        <!-- Flex item 1: Main heading -->
+        <h1 class="display-3">Shade</h1>
+
+        <!-- Flex item 2: Sub-heading -->
+        <p class="lead">
+          <em>an</em> Online Social Network<br />
+          <em>for</em> Privacy-Caring People
+        </p>
+      </div>
+
+      <!-- Grid item 2: form-flex-container -->
+      <div id="form-flex-container">
+        <!-- Flex item: Form -->
+        <div id="flex-form">
+          <!-- Small screen head -->
+          <div id="small-screen-head" class="text-center">
+            <!-- Small screen main heading -->
+            <h1 class="display-3">Shade</h1>
+
+            <!-- Small screen sub-heading -->
+            <p class="lead">
+              <em>an</em> Online Social Network<br />
+              <em>for</em> Privacy-Caring People
+            </p>
+          </div>
+
+          <!-- Alert box -->
+          <% if (alertMessage) { %>
+          <div class="alert alert-<%= alertType %>">
+            <%= alertMessage %>
+          </div>
+          <% } %>
+
+          <!-- Heading -->
+          <h1><%= title %></h1>
+
+          <!-- Log In / Register form -->
+          <form action="/<%= type %>" method="POST" id="form">
+            <!-- Sub-text -->
+            <div class="form-group">
+              <small class="form-text text-muted">
+                <%= subText %> <a href="/<%= otherType %>"><%= otherTitle %></a>
+              </small>
+            </div>
+
+            <!-- Username form group -->
+            <div class="form-group">
+              <!-- Username label group -->
+              <div id="label-group">
+                <!-- Username label -->
+                <label for="username"> Username</label>
+
+                <!-- Username small text -->
+                <small id="username-small-text" class="form-text"></small>
+              </div>
+
+              <!-- Username input box -->
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="username"
+                name="username"
+                placeholder="Enter username"
+              />
+            </div>
+
+            <!-- Password form group -->
+            <div class="form-group">
+              <!-- Password label group -->
+              <div id="label-group">
+                <!-- Password label -->
+                <label for="password">Password</label>
+
+                <!-- Password small text -->
+                <small id="password-small-text" class="form-text"></small>
+              </div>
+
+              <!-- Password input box -->
+              <input
+                type="password"
+                class="form-control form-control-sm"
+                id="password"
+                name="password"
+                placeholder="Enter password"
+              />
+            </div>
+
+            <% if (type === 'register') { %>
+            <!-- Consent form group -->
+            <div class="form-group custom-control custom-checkbox">
+              <!-- Consent checkbox -->
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="consent"
+                name="consent"
+              />
+
+              <!-- Consent label -->
+              <label for="consent" class="custom-control-label">
+                I would like to share my data with Shade.
+              </label>
+            </div>
+            <% } %>
+
+            <!-- Submit button -->
+            <button type="submit" id="submit" class="btn btn-primary btn-sm">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery script -->
+    <script src="/public/js/vendor/jquery-3.3.1.min.js"></script>
+
+    <% if (type === 'register') { %>
+    <!-- Register script -->
+    <script src="/public/js/form/register.js"></script>
+    <% } else { %>
+    <!-- Login script -->
+    <script src="/public/js/form/login.js"></script>
+    <% } %>
+  </body>
+</html>

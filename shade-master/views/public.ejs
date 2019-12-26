@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Title -->
+    <title><%= username %> &middot; Profile | Shade</title>
+
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="/public/css/vendor/bootstrap.min.css" />
+
+    <!-- Profile stylesheet -->
+    <link rel="stylesheet" href="/public/css/profile.css" />
+  </head>
+  <body>
+    <!-- Username heading -->
+    <h1 class="display-4 text-center" id="username"><%= username %></h1>
+
+    <!-- Main navigation bar -->
+    <nav id="main-nav">
+      <!-- Navigation links -->
+      <a href="#" class="nav-item active" onclick="return false;">
+        <span>Profile</span>
+      </a>
+      <a href="/login" class="nav-item">
+        <span>Log In</span>
+      </a>
+    </nav>
+
+    <!-- Profile navigation bar -->
+    <nav id="profile-nav">
+      <!-- Navigation links -->
+      <a href="#" class="nav-item active" id="activity-tab">
+        <span>Activity</span>
+      </a>
+      <a href="#" class="nav-item" id="about-tab">
+        <span>About</span>
+      </a>
+    </nav>
+
+    <!-- Main container -->
+    <div id="main-container">
+      <!-- Activity container -->
+      <div id="activity-container">
+        <!-- Activity list group -->
+        <ul class="list-group" id="activity-list"></ul>
+
+        <!-- Activity end text -->
+        <p class="text-center">
+          <a href="#" id="activity-end-text">Show Posts</a>
+        </p>
+      </div>
+
+      <!-- About container -->
+      <div id="about-container">
+        <!-- Primary alert box -->
+        <div class="alert alert-primary">
+          Log in to connect with <strong><%= username %></strong>.
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery script -->
+    <script src="/public/js/vendor/jquery-3.3.1.min.js"></script>
+
+    <!-- Public profile script -->
+    <script src="/public/js/profile/public.js"></script>
+  </body>
+</html>

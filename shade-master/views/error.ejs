@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Title -->
+    <title>Shade &middot; <%= errorMessage %></title>
+
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="/public/css/vendor/bootstrap.min.css" />
+
+    <!-- 404 stylesheet -->
+    <link rel="stylesheet" href="/public/css/error.css" />
+  </head>
+  <body class="text-center">
+    <!-- Flex container -->
+    <div class="flex-container">
+      <!-- Flex item -->
+      <div class="flex-item">
+        <!-- Error heading -->
+        <h2><%= errorMessage %></h2>
+        <!-- Link back to home -->
+        <a href="/">Home</a>
+      </div>
+    </div>
+  </body>
+</html>

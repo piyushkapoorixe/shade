@@ -1,0 +1,93 @@
+/* Set border radius to 0 for all elements */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Implement CSS grid on main container */
+#main-grid-container {
+  display: grid;
+  grid-template: auto / 50vw 50vw;
+}
+
+/* Implement CSS flexbox on head and form containers */
+#head-flex-container,
+#form-flex-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Change head container colors */
+#head-flex-container {
+  flex-direction: column;
+  color: white;
+  background-color: darkslategray;
+}
+
+/* Set form width */
+#flex-form {
+  width: 50%;
+}
+
+/* Hide small screen heading */
+#small-screen-head {
+  display: none;
+}
+
+/* Set alert padding and text align */
+.alert {
+  text-align: center;
+  padding: 0.25rem;
+}
+
+/* Set input border on focus */
+input[type]:focus {
+  border-color: #007bff;
+}
+
+/* Change label group display and margin */
+#label-group > * {
+  display: inline-block;
+  margin: 0 0 0.25rem;
+}
+
+/* Remove decoration from username check link */
+#check {
+  text-decoration: none;
+}
+
+/* If screen area is less than 576px * 576px */
+@media all and (max-width: 576px), all and (max-height: 576px) {
+  /* Add body padding */
+  body {
+    padding: 5%;
+  }
+  /* Remove CSS grid from main container */
+  #main-grid-container {
+    display: block;
+  }
+
+  /* Hide head container */
+  #head-flex-container {
+    display: none;
+  }
+
+  /* Set form container height */
+  #form-flex-container {
+    height: auto;
+  }
+
+  /* Display small screen heading */
+  #small-screen-head {
+    display: block;
+  }
+
+  /* Set form width */
+  #flex-form {
+    width: 90%;
+  }
+}

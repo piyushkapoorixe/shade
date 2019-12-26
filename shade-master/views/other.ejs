@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Title -->
+    <title><%= username %> &middot; Profile | Shade</title>
+
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="/public/css/vendor/bootstrap.min.css" />
+
+    <!-- Profile stylesheet -->
+    <link rel="stylesheet" href="/public/css/profile.css" />
+  </head>
+  <body>
+    <!-- Username heading -->
+    <h1 class="display-4 text-center" id="username"><%= username %></h1>
+
+    <!-- Main navigation bar -->
+    <nav id="main-nav">
+      <!-- Navigation links -->
+      <a href="/" class="nav-item">
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item active" onclick="return false;">
+        <span>Profile</span>
+      </a>
+      <a href="/logout" class="nav-item">
+        <span>Log Out</span>
+      </a>
+    </nav>
+
+    <!-- Profile navigation bar -->
+    <nav id="profile-nav">
+      <!-- Navigation links -->
+      <a href="#" class="nav-item active" id="activity-tab">
+        <span>Activity</span>
+      </a>
+      <a href="#" class="nav-item" id="about-tab">
+        <span>About</span>
+      </a>
+    </nav>
+
+    <!-- Main container -->
+    <div id="main-container">
+      <!-- Activity container -->
+      <div id="activity-container">
+        <!-- Activity list group -->
+        <ul class="list-group" id="activity-list"></ul>
+
+        <!-- Activity end text -->
+        <p class="text-center">
+          <a href="#" id="activity-end-text">Show Posts</a>
+        </p>
+      </div>
+
+      <!-- About container -->
+      <div id="about-container">
+        <!-- About info list -->
+        <div class="list-group" id="about-list"></div>
+
+        <!-- Connection info alert -->
+        <div class="alert alert-danger">
+          You are not connected with <strong><%= username %></strong>.
+        </div>
+
+        <!-- Connect dropdown -->
+        <div class="dropdown text-center">
+          <!-- Connect button -->
+          <button
+            type="button"
+            class="btn btn-sm btn-success dropdown-toggle"
+            data-toggle="dropdown"
+          >
+            <strong>Connect</strong>
+          </button>
+
+          <!-- Connect dropdown menu -->
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="/<%= username %>/connect/friend" class="dropdown-item">
+              Connect as <strong>Friend</strong>
+            </a>
+            <a href="/<%= username %>/connect/family" class="dropdown-item">
+              Connect as <strong>Family</strong>
+            </a>
+            <a
+              href="/<%= username %>/connect/acquaintance"
+              class="dropdown-item"
+            >
+              Connect as <strong>Acquaintance</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery script -->
+    <script src="/public/js/vendor/jquery-3.3.1.min.js"></script>
+
+    <!-- Popper script -->
+    <script src="/public/js/vendor/popper.min.js"></script>
+
+    <!-- Bootstrap script -->
+    <script src="/public/js/vendor/bootstrap.min.js"></script>
+
+    <!-- Other profile script -->
+    <script src="/public/js/profile/other.js"></script>
+  </body>
+</html>
